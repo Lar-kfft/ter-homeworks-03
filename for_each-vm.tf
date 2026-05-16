@@ -41,7 +41,7 @@ resource "yandex_compute_instance" "db" {
 
   boot_disk {
     initialize_params {
-      image_id = "fd8odsfqaenpkc1ktb3l"
+      image_id = data.yandex_compute_image.ubuntu.image_id
       size     = each.value.disk_volume
     }
   }
